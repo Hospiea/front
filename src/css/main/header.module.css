@@ -1,0 +1,15 @@
+.container {
+    border-bottom: 3px double gray;
+    height: 10dvh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    margin-top: 5dvh;
+    display: flex;
+    justify-content: space-around;
+}
