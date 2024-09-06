@@ -1,0 +1,14 @@
+.container {
+    margin-top: 2em;
+}
+
+.container > h1 {
+    text-align: center;
+}
+
+.inner {
+    margin-top: 2em;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+}
