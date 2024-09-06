@@ -1,0 +1,11 @@
+.container {
+    margin-top: 2em;
+    height: fit-content;
+}
+
+.bar {
+    
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
