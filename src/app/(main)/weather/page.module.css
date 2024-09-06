@@ -1,0 +1,13 @@
+.container {
+    height: 500px;
+    margin-top: 2em;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.body {
+    margin-top: 1em;
+}
