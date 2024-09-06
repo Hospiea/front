@@ -10,7 +10,7 @@ const Nav = () => {
             <Link className="link" href="/codi">오늘의 코디</Link>
             <Link className="link" href="/codiboard">제 코디 어때요?</Link>
             <Link className="link" href="">커뮤니티</Link>
-            <Link className="link" href="">Contact</Link>
+            <Link className="link" href="">소셜로그인</Link>
         </div>
     )
 }
