@@ -68,8 +68,8 @@ const Codi = () => {
       },
       
     );
-    const result = temp.data.response.body.items;
     console.log(temp);
+    const result = temp.data.response.body.items;
     const total: [DataType] = [
       {
         address: result.item[0].rlteBsicAdres,
