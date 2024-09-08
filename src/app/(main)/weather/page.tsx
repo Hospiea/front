@@ -22,7 +22,7 @@ const Weather = () => {
                 <h2>기상청 날씨예보</h2>
             </div>
             <div className={styles.body}>
-                <pre>{weather}</pre>
+                <pre>{weather === "" ? "기상청 데이터 가져오는 중... 잠시만 기다려 주세요" : weather}</pre>
             </div>
         </div>
     )

@@ -1,0 +1,14 @@
+.container {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > h2 {
+    text-align: center;
+}
+
+.inner {
+    margin-top: 0.5em;
+}
