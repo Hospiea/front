@@ -1,0 +1,19 @@
+.container {
+    margin-top: 1em;
+}
+
+.container > h3 {
+    text-align: center;
+}
+
+.body {
+}
+
+.content {
+    margin-top: 1em;
+    position: relative;
+}
+
+.content > p {
+    margin-top: 0.5em;
+}

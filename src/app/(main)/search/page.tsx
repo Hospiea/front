@@ -2,7 +2,7 @@
 import useOnStart from "@/hooks/useOnStart";
 import axios from "axios";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 export interface DataType {
   address: string;
