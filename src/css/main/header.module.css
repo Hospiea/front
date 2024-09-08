@@ -18,3 +18,9 @@
     justify-content: space-around;
 }
 
+
+@media (max-width: 500px) {
+    .container {
+        height: 11dvh;
+    }
+}
