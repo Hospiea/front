@@ -117,7 +117,7 @@ const Codi = () => {
     }
     setData(list);
 
-    const keys = list.keys().toArray();
+    const keys = Array.from(list.keys());
 
     const nameMap = new Map();
     for (let i = 0; i < keys.length; ++i) {
