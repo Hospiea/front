@@ -30,7 +30,7 @@ const This = () => {
                     <p style={{whiteSpace: 'pre-wrap'}}> - 이미지에는 나와있지 않지만 Person의 객체 a를 만들어 a.func()로 호출한 상태이다</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - Person내부의 func라는 함수에서 일반함수와 화살표함수의 this가 각기 다르게 나온다는 걸 알 수 있다</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - 위 예제로 보면 화살표 함수가 선언되면서 상수 afunc에 담기는 시점에서의 상위 실행컨텍스트인 클래스 Person의 객체를 반환하는 것을 알 수 있고</p>
-                    <p style={{whiteSpace: 'pre-wrap'}}> - 비록 함수의 호출 모양새가 Person내부에서 호출한 것처럼 보이지만 ffunc는 특정 객체를 통해 호출한 것이 아닌 ffunc()로 함수 자체를 실행시켰기 때문에 window객체가 나와야 하나, 위 예제에서는 'use strict'모드이기 때문에 undefined가 나온 모습이다</p>
+                    <p style={{whiteSpace: 'pre-wrap'}}> - 비록 함수의 호출 모양새가 Person내부에서 호출한 것처럼 보이지만 ffunc는 특정 객체를 통해 호출한 것이 아닌 ffunc()로 함수 자체를 실행시켰기 때문에 window객체가 나와야 하나, 위 예제에서는 use strict 모드이기 때문에 undefined가 나온 모습이다</p>
                 </div>
                 <div className={styles.content}>
                     <h2>5. 과연 static은?</h2>
@@ -49,6 +49,10 @@ const This = () => {
                     <p style={{whiteSpace: 'pre-wrap'}}> - 또한 static함수의 선언을 보면 왜 static에서는 화살표함수와 일반함수의 this의 차이가 없는지 추론해볼 수 있는데,</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - 일반적으로 자바스크립트에서 함수는 일급객체로 특정 변수에 담을 수 있다는 특징이 있다. const func = {`() => {}`} 하는 식으로...</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - 하지만 static으로 선언한 함수의 경우 const키워드를 사용해 특정 변수에 담을 수 없는데, 이는 런타임 중 변화하는 스택, 또는 힙 메모리에 올라가는 const, let과 같은 변수가 아닌 정적 메모리 영역에 생성되는 객체이기 때문으로 이해하였다.</p>
+                </div>
+
+                <div>
+
                 </div>
             </div>
         </div>

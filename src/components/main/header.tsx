@@ -7,7 +7,7 @@ const Header = () => {
     return(
         <div className={styles.container}>
             <div className={styles.title}>
-                <h2><Link className={`link ${styles.header}`} href="/">날씨와 여행지</Link></h2>
+                <h2><Link className={`link ${styles.header}`} href="/">날씨와 여행지, 스터디 등등...</Link></h2>
             </div>
             <div className={styles.nav}>
                 <Nav />
