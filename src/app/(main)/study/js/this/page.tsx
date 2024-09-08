@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../../study.module.css';
+import CommentComp from '@/components/comment/comment';
 
 const This = () => {
 
@@ -41,7 +42,7 @@ const This = () => {
                     <p style={{whiteSpace: 'pre-wrap'}}> - 이 때 반환하는 값은 특정 객체가 아닌 Person이라는 클래스의 원형을 그대로 반환한다는 것을 볼 수 있다</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - 특이한 점은 아래 사진을 보면,</p>
                     <Image src="/study/arrow.PNG" alt="No Source" width={600} height={400}/>
-                    <p style={{whiteSpace: 'pre-wrap'}}> - static함수의 경우 화살표함수도 같은 Person클래스의 원형을 가리키는 걸 볼 수 있다.</p><br /><hr/>
+                    <p style={{whiteSpace: 'pre-wrap'}}> - static함수의 경우 화살표함수도 같은 Person클래스의 원형을 가리키는 걸 볼 수 있다.</p><br />
                     <p style={{textAlign: "center", whiteSpace: 'pre-wrap'}}> ----------- 여기부터는 뇌피셜입니다 -----------</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - 이전에 C++을 배울 때 메모리구조에 대해 공부한 적이 있었는데 메모리 공간에 static은 별도의 메모리 영역을 할당받고 프로그램이 시작한다고 들었던 기억이 있다.</p>
                     <p style={{whiteSpace: 'pre-wrap'}}> - static을 처음 배울 때 static을 남발하면 메모리공간이 부족하지 않을까 걱정한 적이 있었는데 static에 필요한 메모리 영역을 미리 계산해서 그만큼을 할당하고 시작하는 것이다.</p>
@@ -52,7 +53,7 @@ const This = () => {
                 </div>
 
                 <div>
-
+                    <CommentComp />
                 </div>
             </div>
         </div>
