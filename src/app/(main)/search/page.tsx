@@ -153,9 +153,9 @@ const Codi = () => {
         </div>
         {total && total.map((item: DataType, index: number) => {
             return(
-              <div key={index}>
-                {item.address}
-                {item.name}
+              <div key={index} style={{display: "flex", width: "50dvw", justifyContent: "space-between", marginTop: "0.2em"}}>
+                <div>{item.address}</div>
+                <div>{item.name}</div>
               </div>
             )
         })}
