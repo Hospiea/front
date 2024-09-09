@@ -75,7 +75,11 @@ const CommentComp = ({type}: {type: string}) => {
             }}
         );
         if(result) {
-            const temp = await axios.get("/api/comment");
+            const temp = await axios.get("/api/comment", {
+                headers:{
+                    "CompType" : type,
+                }
+            });
                 const data: CommentType[] = temp.data.map((item: CommentType) => {
                     const newData: CommentType = {
                         id: item.id,
