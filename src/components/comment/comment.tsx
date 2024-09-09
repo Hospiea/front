@@ -13,14 +13,20 @@ export interface CommentType {
 }
 
 
-const CommentComp = () => {
+
+
+const CommentComp = ({type}: {type: string}) => {
     const [pw, setPw] = useState<string>("");
     const [clickedIndex, setClickedIndex] = useState(0);
     const [comments, setComments] = useState<CommentType[]>([]);
     const [newcomment, setNewcomment] = useState<CommentType>({id: -1, nickname: "", text: "", pw: ""});
 
     useOnStart(async ()=>{
-        const result = await axios.get("/api/comment");
+        const result = await axios.get("/api/comment", 
+            {headers: {
+                "CompType" : type,
+            }}
+        );
         const data: CommentType[] = result.data.map((item: CommentType) => {
             const newData: CommentType = {
                 id: item.id,
@@ -38,6 +44,7 @@ const CommentComp = () => {
         const result = await axios.post("/api/comment", {nickname: newcomment.nickname, text: newcomment.text, pw: newcomment.pw}, {
             headers: {
                 "RequestType" : "Create",
+                "CompType" : type,
             }
         });
         if(result) {
@@ -63,7 +70,8 @@ const CommentComp = () => {
                 id: index,
             },
             {headers: {
-                "RequestType" : "Delete"
+                "RequestType" : "Delete",
+                "CompType" : type,
             }}
         );
         if(result) {

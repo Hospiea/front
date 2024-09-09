@@ -3,7 +3,8 @@ import { supabase } from "@/lib/supabase";
 
 
 const GET = async (req:NextRequest) => {
-    const result = await supabase.from('comment').select();
+    const comptype = req.headers.get("CompType") as string;
+    const result = await supabase.from(comptype).select();
     console.log(result);
 
     return NextResponse.json(result.data);
@@ -11,11 +12,11 @@ const GET = async (req:NextRequest) => {
 
 const POST = async (req:NextRequest) => {
     const type = req.headers.get("RequestType");
-
+    const comptype = req.headers.get("CompType") as string;
     switch(type) {
         case "Delete": {
             const request = await req.json();
-            const result = await supabase.from('comment').delete().eq("id", request.id);
+            const result = await supabase.from(comptype).delete().eq("id", request.id);
             if(result) {
                 return NextResponse.json({message: "Ok"});
             }
@@ -24,7 +25,7 @@ const POST = async (req:NextRequest) => {
 
         case "Create": {
             const request = await req.json();
-            const result = await supabase.from('comment').insert(request);
+            const result = await supabase.from('comptype').insert(request);
             if(result){
                 return NextResponse.json({message: "Ok"});
             }

@@ -53,7 +53,7 @@ const This = () => {
                 </div>
 
                 <div>
-                    <CommentComp />
+                    <CommentComp type="comment"/>
                 </div>
             </div>
         </div>
