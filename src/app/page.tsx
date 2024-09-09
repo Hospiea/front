@@ -1,7 +1,17 @@
+'use client'
 
+import useOnStart from "@/hooks/useOnStart";
 
 export default function Home() {
 
+  // useOnStart( ()=> {
+  //   if(navigator.geolocation){
+  //     navigator.geolocation.getCurrentPosition((position)=>{
+  //       console.log(position);
+  //     });
+  //   }
+  // })
+  
   
   return (
     <div style={{display: "flex", justifyContent: "center", marginTop: "2em"}}>

@@ -2,7 +2,7 @@
 import useOnStart from "@/hooks/useOnStart";
 import axios from "axios";
 import styles from "./page.module.css";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 
 export interface DataType {
   address: string;
@@ -57,7 +57,7 @@ const Codi = () => {
   const [region, setRegion] = useState("서울특별시");
   const [signNm, setSignNm] = useState(11110);
   const [total, setTotal] = useState<DataType[]>();
-
+  const signRef = useRef<HTMLSelectElement>(null);
 
 
   const OnClick = async () => {
@@ -66,9 +66,7 @@ const Codi = () => {
         Region: namemap.get(region),
         Sign: signNm,
       },
-      
     );
-    console.log(temp);
     const result = temp.data.response.body.items;
     const total: [DataType] = [
       {
@@ -83,8 +81,6 @@ const Codi = () => {
       });
     }
     setTotal(total);
-
-    console.log(total);
   };
 
   useOnStart(async () => {
@@ -137,14 +133,16 @@ const Codi = () => {
         <h2>검색할 여행지를 입력하세요</h2>
         <div className={styles.inner}>
           <label>
-            <select value={region} onChange={(e) => setRegion(e.target.value)}>
+            <select value={region} onChange={(e) => {setRegion(e.target.value);
+            setTimeout(()=>{
+              setSignNm(Number(signRef.current?.value));}, 100);
+            }}>
               {Array.from(namemap.keys()).map((item, index) => {
                 return <option key={index}>{item}</option>;
               })}
             </select>
           </label>
-          <select onChange={(e)=>{
-            setSignNm(Number(e.target.value));}}>
+          <select ref={signRef} onChange={(e)=>{setSignNm(Number(e.target.value));}}>
             {data.get(region)?.map((item, index) => {
               return (<option value={item.sigunguCd} key={index}>{item.sigunguNm}</option>);
             })}
