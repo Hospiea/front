@@ -9,4 +9,33 @@ const GET = async (req:NextRequest) => {
     return NextResponse.json(result.data);
 }
 
-export {GET}
+const POST = async (req:NextRequest) => {
+    const type = req.headers.get("RequestType");
+
+    switch(type) {
+        case "Delete": {
+            const request = await req.json();
+            const result = await supabase.from('comment').delete().eq("id", request.id);
+            if(result) {
+                return NextResponse.json({message: "Ok"});
+            }
+            break;
+        }
+
+        case "Create": {
+            const request = await req.json();
+            const result = await supabase.from('comment').insert(request);
+            if(result){
+                return NextResponse.json({message: "Ok"});
+            }
+            break;
+        }
+    }
+
+    
+
+    
+}
+
+export {GET, POST}
+

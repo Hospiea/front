@@ -5,3 +5,22 @@
 .title {
     border-bottom: 3px double gray;
 }
+
+.commentbox{
+    display: flex;
+}
+
+.deletebutton {
+    margin-left: 1em;
+    width: 6em;
+}
+
+.writebox {
+    margin-top: 1em;
+}
+
+.inputbox {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}

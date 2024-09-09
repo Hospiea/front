@@ -6,11 +6,6 @@
   font-size: 20px;
 }
 
-@media (max-width: 768px) {
-  * {
-    font-size: 12px;
-  }
-}
 
 @font-face {
   font-family: 'custom';
@@ -47,4 +42,14 @@
 .link:hover::after {
   left: 0;
   width: 100%;
+}
+
+
+@media (max-width: 768px) {
+  * {
+    font-size: 12px;
+  }
+  .outline {
+    width: 100dvw;
+  }
 }
