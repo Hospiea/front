@@ -1,9 +1,8 @@
 "use client";
 import Header from "@/components/main/header";
-import { useEffect, useLayoutEffect, useRef } from "react";
-import Home from "./page";
+import { useEffect, useRef } from "react";
 import Footer from "@/components/main/footer";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Body = ({ children }: { children: React.ReactNode }) => {
   const bodyRef = useRef<HTMLBodyElement | null>(null);
