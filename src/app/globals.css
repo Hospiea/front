@@ -11,6 +11,14 @@ body {
   background: linear-gradient(white, #FCECC9);
 }
 
+.overbody {
+  height: fit-content;
+}
+
+.underbody {
+  height: 100vh;
+}
+
 
 @font-face {
   font-family: 'custom';
@@ -58,3 +66,4 @@ body {
     width: 100dvw;
   }
 }
+

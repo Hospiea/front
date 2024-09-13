@@ -1,8 +1,7 @@
 'use client'
 
-import useOnStart from "@/hooks/useOnStart";
 
-export default function Home() {
+export default function Home({children}: {children: React.ReactNode}) {
 
   // useOnStart( ()=> {
   //   if(navigator.geolocation){
@@ -12,10 +11,10 @@ export default function Home() {
   //   }
   // })
   
-  
-  return (
-    <div style={{display: "flex", justifyContent: "center", marginTop: "2em"}}>
-      <h1>🥰 방문을 환영합니다 🥰</h1>
-    </div>
-  );
+    return (
+      <div style={{display: "flex", justifyContent: "center", marginTop: "2em"}}>
+        <h1>🥰 방문을 환영합니다 🥰</h1>
+      </div>
+    );
+
 }

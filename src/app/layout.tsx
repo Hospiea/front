@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "../components/main/header";
-import Footer from "@/components/main/footer";
+import Body from "./body";
 
 
 
@@ -15,23 +14,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
+
   return (
     <html lang="ko">
-      <body className="outline">
-
-        <header>
-          <Header />
-        </header>
-
-        <main>
-        {children}
-        </main>
-
-        <footer>
-          <Footer />
-        </footer>
-
-      </body>
+        <Body>
+          {children}
+        </Body>
     </html>
   );
 }
